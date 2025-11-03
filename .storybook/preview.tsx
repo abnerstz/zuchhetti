@@ -2,7 +2,6 @@ import type { Preview, Decorator } from '@storybook/react';
 import { ThemeProvider as MuiThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React, { useMemo } from 'react';
-import { useGlobals } from '@storybook/preview-api';
 
 // Cria um QueryClient para as stories
 const queryClient = new QueryClient({
@@ -15,10 +14,7 @@ const queryClient = new QueryClient({
 });
 
 // Componente wrapper para Material-UI com suporte a tema
-function MuiThemeWrapper({ children }: { children: React.ReactNode }) {
-  const [globals] = useGlobals();
-  const isDark = globals.backgrounds?.value === '#333333';
-
+function MuiThemeWrapper({ children, isDark }: { children: React.ReactNode; isDark: boolean }) {
   const theme = useMemo(
     () =>
       createTheme({
@@ -64,11 +60,15 @@ function MuiThemeWrapper({ children }: { children: React.ReactNode }) {
 }
 
 // Decorator customizado para Material-UI
-const withMuiTheme: Decorator = (Story) => (
-  <MuiThemeWrapper>
-    <Story />
-  </MuiThemeWrapper>
-);
+const withMuiTheme: Decorator = (Story, context) => {
+  const isDark = context.globals.backgrounds?.value === '#333333';
+
+  return (
+    <MuiThemeWrapper isDark={isDark}>
+      <Story />
+    </MuiThemeWrapper>
+  );
+};
 
 const preview: Preview = {
   parameters: {
