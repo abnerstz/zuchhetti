@@ -6,12 +6,13 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178C6?style=for-the-badge&logo=typescript)
 ![Vite](https://img.shields.io/badge/Vite-5.4-646CFF?style=for-the-badge&logo=vite)
 ![MUI](https://img.shields.io/badge/Material_UI-6.1-007FFF?style=for-the-badge&logo=mui)
+![Storybook](https://img.shields.io/badge/Storybook-8.6-FF4785?style=for-the-badge&logo=storybook)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 ![CI/CD](https://github.com/abnerstz/zuchhetti/workflows/CI%2FCD/badge.svg)
 
 Uma aplicação moderna e completa para gerenciamento de usuários com operações CRUD, desenvolvida seguindo as melhores práticas do mercado.
 
-[Demo ao Vivo](https://abnerstz.github.io/zuchhetti/) • [Documentação](#funcionalidades) • [Instalação](#instalação)
+[Demo ao Vivo](https://abnerstz.github.io/zuchhetti/) • [Storybook](https://abnerstz.github.io/zuchhetti/storybook/) • [Documentação](#funcionalidades) • [Instalação](#instalação)
 
 </div>
 
@@ -37,18 +38,6 @@ Uma aplicação moderna e completa para gerenciamento de usuários com operaçõ
 ## 📖 Sobre
 
 Este projeto é um **Painel de Gestão de Usuários** desenvolvido como desafio técnico, demonstrando proficiência em desenvolvimento React moderno com TypeScript. A aplicação oferece uma interface intuitiva para realizar operações CRUD completas em usuários, com integração a uma API REST.
-
-### 🎯 Objetivos Alcançados
-
-✅ Código TypeScript 100% tipado (zero `any`)  
-✅ Componentes funcionais com React Hooks  
-✅ Gerenciamento de estado do servidor com React Query  
-✅ Validação de formulários com Zod + React Hook Form  
-✅ Interface responsiva e acessível com Material-UI  
-✅ Dark mode persistente  
-✅ Testes automatizados com cobertura > 70%  
-✅ CI/CD configurado com GitHub Actions  
-✅ Código limpo seguindo princípios SOLID
 
 ---
 
@@ -94,6 +83,13 @@ Este projeto é um **Painel de Gestão de Usuários** desenvolvido como desafio 
 - **[MSW 2 (Mock Service Worker)](https://mswjs.io/)** - Mock de API em nível de rede
 - **[@testing-library/user-event](https://testing-library.com/docs/user-event/intro)** - Simulação de interações do usuário
 - **[SWC](https://swc.rs/)** - Transpilador rápido para Jest
+
+### Documentação
+
+- **[Storybook 8.6](https://storybook.js.org/)** - Documentação interativa de componentes
+  - 9 stories criadas para todos os componentes
+  - Suporte a temas claro/escuro
+  - Deploy automático em `/storybook/`
 
 ---
 
@@ -199,10 +195,12 @@ npm run prepare
 ```bash
 # Desenvolvimento
 npm run dev              # Inicia servidor de desenvolvimento (http://localhost:5173)
+npm run storybook        # Inicia Storybook (http://localhost:6006)
 
 # Build
 npm run build            # Gera build de produção otimizado
 npm run preview          # Preview do build de produção
+npm run build-storybook  # Gera build do Storybook
 
 # Testes
 npm run test             # Executa todos os testes
@@ -403,13 +401,16 @@ Pipeline completo em **um único workflow** (`.github/workflows/ci.yml`):
 ### 🔄 Executado em Todo Push/PR:
 
 1. ✅ **Test & Lint** - Prettier + ESLint + 37 testes
-2. ✅ **Build** - Build de produção e validação
+2. ✅ **Build** - Build de produção e Storybook
 
 ### 🚀 Deploy Automático (Apenas Push para `main`):
 
 3. ✅ **Deploy** - GitHub Pages automático
 
-**🌐 Site:** [abnerstz.github.io/zuchhetti](https://abnerstz.github.io/zuchhetti/)
+**🌐 URLs Deployadas:**
+
+- **App:** [abnerstz.github.io/zuchhetti](https://abnerstz.github.io/zuchhetti/)
+- **Storybook:** [abnerstz.github.io/zuchhetti/storybook](https://abnerstz.github.io/zuchhetti/storybook/)
 
 ### 🔒 Pre-commit Hooks (Husky)
 
