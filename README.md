@@ -20,18 +20,17 @@ Uma aplicação moderna e completa para gerenciamento de usuários com operaçõ
 
 ## 📋 Índice
 
-- [Sobre](#sobre)
-- [Stack Tecnológica](#stack-tecnológica)
-- [Funcionalidades](#funcionalidades)
-- [Pré-requisitos](#pré-requisitos)
-- [Instalação](#instalação)
-- [Scripts Disponíveis](#scripts-disponíveis)
-- [Estrutura de Pastas](#estrutura-de-pastas)
-- [Decisões Técnicas](#decisões-técnicas)
-- [Testes](#testes)
-- [CI/CD](#cicd)
-- [Melhorias Futuras](#melhorias-futuras)
-- [Licença](#licença)
+- [📖 Sobre](#-sobre)
+- [🛠 Stack Tecnológica](#-stack-tecnológica)
+- [✨ Funcionalidades](#-funcionalidades)
+- [📦 Pré-requisitos](#-pré-requisitos)
+- [🚀 Instalação](#-instalação)
+- [📜 Scripts Disponíveis](#-scripts-disponíveis)
+- [📁 Estrutura de Pastas](#-estrutura-de-pastas)
+- [🧠 Decisões Técnicas](#-decisões-técnicas)
+- [🧪 Testes](#-testes)
+- [🔄 CI/CD](#-cicd)
+- [📄 Licença](#-licença)
 
 ---
 
@@ -154,14 +153,14 @@ Este projeto é um **Painel de Gestão de Usuários** desenvolvido como desafio 
 Antes de começar, você precisará ter instalado:
 
 - **Node.js** versão 20.x ou superior ([Download](https://nodejs.org/))
-- **npm** versão 9.x ou superior (incluído com Node.js)
+- **Yarn** versão 1.22 ou superior ([Download](https://classic.yarnpkg.com/))
 - **Git** ([Download](https://git-scm.com/))
 
 Para verificar as versões instaladas:
 
 ```bash
 node --version  # deve retornar v20.x.x ou superior
-npm --version   # deve retornar 9.x.x ou superior
+yarn --version  # deve retornar 1.22.x ou superior
 git --version
 ```
 
@@ -179,14 +178,16 @@ cd zuchhetti
 ### 2. Instale as dependências
 
 ```bash
-npm install
+yarn install
 ```
 
-### 3. Configure Husky (hooks de Git)
+### 3. Inicie o servidor de desenvolvimento
 
 ```bash
-npm run prepare
+yarn dev
 ```
+
+A aplicação estará disponível em [http://localhost:5173](http://localhost:5173)
 
 ---
 
@@ -194,24 +195,24 @@ npm run prepare
 
 ```bash
 # Desenvolvimento
-npm run dev              # Inicia servidor de desenvolvimento (http://localhost:5173)
-npm run storybook        # Inicia Storybook (http://localhost:6006)
+yarn dev              # Inicia servidor de desenvolvimento (http://localhost:5173)
+yarn storybook        # Inicia Storybook (http://localhost:6006)
 
 # Build
-npm run build            # Gera build de produção otimizado
-npm run preview          # Preview do build de produção
-npm run build-storybook  # Gera build do Storybook
+yarn build            # Gera build de produção otimizado
+yarn preview          # Preview do build de produção
+yarn build-storybook  # Gera build do Storybook
 
 # Testes
-npm run test             # Executa todos os testes
-npm run test:watch       # Executa testes em modo watch
-npm run test:coverage    # Gera relatório de cobertura de testes
+yarn test             # Executa todos os testes
+yarn test:watch       # Executa testes em modo watch
+yarn test:coverage    # Gera relatório de cobertura de testes
 
 # Qualidade de Código
-npm run lint             # Executa ESLint
-npm run lint:fix         # Executa ESLint e corrige problemas automaticamente
-npm run format           # Formata código com Prettier
-npm run format:check     # Verifica formatação sem modificar arquivos
+yarn lint             # Executa ESLint
+yarn lint:fix         # Executa ESLint e corrige problemas automaticamente
+yarn format           # Formata código com Prettier
+yarn format:check     # Verifica formatação sem modificar arquivos
 ```
 
 ---
@@ -374,13 +375,13 @@ A aplicação possui **testes unitários e de integração** cobrindo:
 
 ```bash
 # Executar todos os testes
-npm run test
+yarn test
 
 # Modo watch (recomendado para desenvolvimento)
-npm run test:watch
+yarn test:watch
 
 # Gerar relatório de cobertura HTML
-npm run test:coverage
+yarn test:coverage
 ```
 
 ### Estratégia de Testes
