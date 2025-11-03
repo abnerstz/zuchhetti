@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, waitFor } from '../test/utils';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
