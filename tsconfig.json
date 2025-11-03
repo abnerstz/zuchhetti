@@ -2,10 +2,13 @@
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "module": "ESNext",
     "skipLibCheck": true,
-    
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
@@ -13,7 +16,6 @@
     "moduleDetection": "force",
     "noEmit": true,
     "jsx": "react-jsx",
-    
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
@@ -21,18 +23,31 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitReturns": true,
-    
     /* Paths */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     },
-    
     /* Testing */
-    "types": ["jest", "@testing-library/jest-dom"],
+    "types": [
+      "jest",
+      "@testing-library/jest-dom"
+    ],
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src", "jest.setup.ts", "jest.config.ts", "jest.polyfills.ts", "jest-dom.d.ts", "vite.config.ts"],
-  "exclude": ["node_modules", "dist", "coverage"]
+  "include": [
+    "src",
+    "jest.setup.ts",
+    "jest.polyfills.ts",
+    "jest-dom.d.ts",
+    "vite.config.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "coverage"
+  ]
 }

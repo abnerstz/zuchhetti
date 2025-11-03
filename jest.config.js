@@ -1,6 +1,4 @@
-import type { Config } from 'jest';
-
-const config: Config = {
+export default {
   testEnvironment: 'jsdom',
   roots: ['<rootDir>/src'],
   setupFiles: ['<rootDir>/jest.polyfills.ts'],
@@ -50,5 +48,3 @@ const config: Config = {
     },
   },
 };
-
-export default config;
