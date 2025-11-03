@@ -7,10 +7,11 @@
 ![Vite](https://img.shields.io/badge/Vite-5.4-646CFF?style=for-the-badge&logo=vite)
 ![MUI](https://img.shields.io/badge/Material_UI-6.1-007FFF?style=for-the-badge&logo=mui)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![CI/CD](https://github.com/abnerstz/zuchhetti/workflows/CI%2FCD/badge.svg)
 
 Uma aplicação moderna e completa para gerenciamento de usuários com operações CRUD, desenvolvida seguindo as melhores práticas do mercado.
 
-[Demo ao Vivo](#) • [Documentação](#funcionalidades) • [Instalação](#instalação)
+[Demo ao Vivo](https://abnerstz.github.io/zuchhetti/) • [Documentação](#funcionalidades) • [Instalação](#instalação)
 
 </div>
 
@@ -175,8 +176,8 @@ git --version
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/user-management-panel.git
-cd user-management-panel
+git clone https://github.com/abnerstz/zuchhetti.git
+cd zuchhetti
 ```
 
 ### 2. Instale as dependências
@@ -397,29 +398,20 @@ npm run test:coverage
 
 ## 🔄 CI/CD
 
-O projeto possui pipeline completo configurado em `.github/workflows/ci.yml`:
+Pipeline completo em **um único workflow** (`.github/workflows/ci.yml`):
 
-#### 🔍 Lint & Test
+### 🔄 Executado em Todo Push/PR:
 
-- ✅ Checkout do código
-- ✅ Setup do Node.js 20 com cache npm
-- ✅ Instalação de dependências
-- ✅ Verificação de formatação (Prettier)
-- ✅ Linting (ESLint) com verificação de tipos
-- ✅ Execução de todos os testes (Jest)
-- ✅ Geração de relatório de cobertura
+1. ✅ **Test & Lint** - Prettier + ESLint + 37 testes
+2. ✅ **Build** - Build de produção e validação
 
-#### 🏗️ Build
+### 🚀 Deploy Automático (Apenas Push para `main`):
 
-- ✅ Build da aplicação
-- ✅ Upload de artifacts
+3. ✅ **Deploy** - GitHub Pages automático
 
-#### 🚀 Deploy (opcional)
+**🌐 Site:** [abnerstz.github.io/zuchhetti](https://abnerstz.github.io/zuchhetti/)
 
-- ✅ Deploy automático em push para `main`
-- ✅ Suporte para Vercel/Netlify
-
-### Pre-commit Hooks (Husky)
+### 🔒 Pre-commit Hooks (Husky)
 
 Antes de cada commit, são executados automaticamente:
 
@@ -428,52 +420,9 @@ Antes de cada commit, são executados automaticamente:
 
 ---
 
-## 🔮 Melhorias Futuras
-
-### Funcionalidades
-
-- [ ] Autenticação e autorização (JWT)
-- [ ] Filtros avançados (múltiplos campos, data ranges)
-- [ ] Exportação de dados (CSV, Excel)
-- [ ] Edição inline na tabela
-- [ ] Bulk actions (excluir múltiplos usuários)
-- [ ] Histórico de alterações (audit log)
-
-### Técnicas
-
-- [ ] Migrar para APIs não deprecadas do MUI v7
-- [ ] Internacionalização (i18n) com react-i18next
-- [ ] Server-Side Rendering (SSR) com Next.js ou Remix
-- [ ] PWA (Progressive Web App) com service workers
-- [ ] Storybook para documentação de componentes
-- [ ] E2E tests com Playwright
-- [ ] Monitoramento de erros (Sentry)
-- [ ] Analytics (Vercel Analytics, Posthog)
-
-### Performance
-
-- [ ] Virtual scrolling para grandes listas (react-window)
-- [ ] Service Worker para cache offline
-- [ ] Lazy loading de rotas
-- [ ] Image optimization
-
----
-
 ## 📄 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
----
-
-## 👨‍💻 Autor
-
-Desenvolvido com ❤️ como desafio técnico demonstrando habilidades em:
-
-- Arquitetura de software escalável
-- Código limpo e manutenível
-- Boas práticas de desenvolvimento
-- Testes automatizados
-- DevOps e CI/CD
 
 ---
 
